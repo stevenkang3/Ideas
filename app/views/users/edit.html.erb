@@ -1,0 +1,27 @@
+<br>
+<a href="/users/<%=@user.id%>">Back</a>
+<h1>Profile Page</h1>
+<form  action="/users/<%=@user.id%>" method="post">
+<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<input type="hidden" name="_method" value="patch">
+<label for="name">Name</label>
+<input id='name' type="text" name="user[name]" value="<%=@user.name%>"><br><br>
+<label for="name">Alias</label>
+<input id='name' type="text" name="user[alias]" value="<%=@user.alias%>"><br><br>
+<label for="email">Email</label>
+<input id='email' type="text" name="user[email]" value="<%=@user.email%>"><br><br>
+<label for="password">Password</label>
+<input id='password' type="password" name="user[password]" placeholder="password must match"><br><br>
+<label for="password_confirmation">Password Confirmation</label>
+<input id='password_confirmation' type="password" name="user[password_confirmation]" placeholder="password must match"><br><br>
+<input type="submit" value="Update">
+</form>
+
+<form  action="/user/<%=@user.id%>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Account">
+</form>
+
+<p> Total Number of Post = <%= @idea %></p>
+<p> Total Number of Likes = <%= @likes %></p>

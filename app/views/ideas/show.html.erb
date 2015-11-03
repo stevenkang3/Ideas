@@ -1,0 +1,23 @@
+<br>
+<a href="/users/<%=@user%>">Back</a>
+<h1><%= @ideas.first.user.alias %> said:</h1>
+<h2>'<%= @ideas.first.content %>'</h2>
+
+<h3> People who liked this Idea <h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Alias</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @likes.each do |l| %>
+  <tr>
+    <td><%= l.user.alias %></td>
+    <td><%= l.user.name%></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
